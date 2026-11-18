@@ -21,7 +21,7 @@ Built on **Databricks**, with **scikit-learn, XGBoost, SHAP and MLflow**.
 - **Gini** (exposure-weighted Lorenz curve) = how well the model ranks risk, the metric pricing teams care about most.
 - Both main models stay **balanced**: total predicted claims are within 0.2% of actual.
 
-![Lorenz curve](images/lorenz_curve.png)
+![Lorenz curve](lorenz_curve.png)
 
 ---
 
@@ -32,7 +32,7 @@ Built on **Databricks**, with **scikit-learn, XGBoost, SHAP and MLflow**.
 3. **Urban areas claim more.** Frequency rises 70% from the most rural area (A) to the most urban (F). Once population density is in the model, the coarser `Area` factor adds almost nothing (×1.02), so it's redundant.
 4. **Brand B12's new vehicles are a distinct high-risk segment.** They make up 64% of all new cars and claim 0.452 times a year, against 0.082 for B12's older cars and 0.124 for other brands' new cars. Their policies average only about 0.26 years, consistent with a fleet, rental or leasing book, or a recording quirk.
 
-![SHAP summary](images/shap_summary.png)
+![SHAP summary](shap_summary.png)
 
 ---
 
@@ -62,7 +62,7 @@ SHAP showed XGBoost relying heavily on brand-new vehicles, an effect the one-way
 | **Explainability** | SHAP values via XGBoost's `pred_contribs`, read as multipliers (exp of the log-scale contribution) |
 | **Tracking** | Every model logged to **MLflow**: parameters, metrics, the Lorenz chart, and the trained XGBoost model |
 
-![MLflow run comparison](images/mlflow_compare.png)
+![MLflow run comparison](mlflow_compare.png)
 
 ---
 
